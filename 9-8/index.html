@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Methods</title>
+</head>
+<body>
+    <script>
+        // Create an array
+        const arry = ['one', 'two', 'three', 'four', 'five'];
+        console.log(arry);
+        console.log(arry[4]);
+ 
+        //Creat array constructor
+        const arr1 = new Array();
+        arr1[0] = 0;
+        arr1[1] = 1;
+        arr1[2] = 2;
+        console.log(arr1);
+ 
+        //Find length of array
+        var l = arr1.length;
+        console.log(l);
+ 
+        //pop method
+        arry1 = ['one', 'two', 'three', 'four', 'five'];
+        arry1.pop();
+        console.log(arry1);
+ 
+        //push method
+        arry1.push('last element');
+        console.log(arry1);
+ 
+        //contact method
+        arry2 = [1, 2, 3];
+        const arry3 = arry1.concat(arry2);
+        console.log(arry3);
+ 
+        //slice method
+        const arry4 = arry3.slice(3, 6);
+        console.log(arry4);
+ 
+        //splice method to add element
+        arry4.splice(0, 0, 1, 2);
+        console.log(arry4);
+
+        //splice method to delete element
+        arry4.splice(2, 1);
+        console.log(arry4);
+
+        //includes method
+        console.log(arry4.includes(1));
+ 
+        //indexof method
+        console.log(arry4.indexOf(1));
+ 
+        //shift method
+        arry4.shift();
+        console.log(arry4);
+ 
+        //unshift method
+        arry4.unshift(1);
+        console.log(arry4);
+ 
+        //filter method
+        const fruit = ['mango', 'banana', 'pineapple', 'apple', 'cherry'];
+        console.log(fruit);
+        console.log(fruit.filter(f => f.length < 6));
+ 
+        //find method
+        console.log(fruit);
+        console.log(fruit.find(f => f.length < 6));
+ 
+        //findIndex method
+        console.log(fruit.findIndex(f => f.length < 6));
+ 
+        //delete
+        const obj = [{ a: 1, b: 2, c: 3 }, { a: 1, b: 2, c: 3 }, { a: 1, b: 2, c: 3 }];
+        console.log(delete obj[0]);
+        console.log(obj);
+        console.log(obj.length);
+ 
+        //entries method
+        const color = ["red", "green", "blue", "pink"];
+        console.log(color.entries());
+        var e = color.entries();
+ 
+        for (const ele of e) {
+            console.log(ele);
+        }
+ 
+        //every method
+        console.log(fruit.every(x => x.length < 6));
+ 
+        //some method
+        console.log(fruit.some(x => x.length < 6));
+ 
+        //map
+        const arry5 = [1,2,3,4,5];
+        const arry6 = arry5.map(value => value + 5);
+        console.log(arry6);
+ 
+ 
+        //flat
+        const arry7 = [1,[2,3],4,5,6,7];
+        const arry8 = arry7.flat();
+        console.log(arry7);
+ 
+        const arry9 = [1,[[2,3,4,5]],6,7];
+        const arry10 = arry9.flat(2);
+        console.log(arry10);
+ 
+    </script>
+
+</body>
+</html>
