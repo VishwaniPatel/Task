@@ -7,6 +7,19 @@
     <title>JS Methods</title>
 </head>
 <body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Month</th>
+                <th>Expenses</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+        <tbody id="tdata">
+
+        </tbody>
+    </table>
     <script>
         // Create an array
         const arry = ['one', 'two', 'three', 'four', 'five'];
@@ -111,7 +124,46 @@
         const arry9 = [1,[[2,3,4,5]],6,7];
         const arry10 = arry9.flat(2);
         console.log(arry10);
- 
+        
+
+    //Add table data using for loop
+    var personal_details=[
+                            {sn : 1, month: 'January', expenses : 2000, income : 5000}, 
+                            {sn : 2, month: 'February', expenses : 2500, income : 6000},
+                            {sn : 3, month: 'March', expenses : 1000, income : 4000},
+                            {sn : 4, month: 'April', expenses : 2500, income : 5500}
+                        ]
+
+    
+    var table = document.getElementById('tdata');
+        var start=window.performance.now();
+    for ( var i = 0 ; i < personal_details.length ; i++ )
+    {
+        var r = `<tr>
+                    <td>${personal_details[i].sn}</td>
+                    <td>${personal_details[i].month}</td>
+                    <td>${personal_details[i].expenses}</td>
+                    <td>${personal_details[i].income}</td>
+            </tr>`
+           table.innerHTML += r;
+    }
+
+
+    //Add table data using foreach method
+    // personal_details.forEach(element => {
+    //     console.log(element);
+    //     var r = `<tr>
+    //                 <td>${element.sn}</td>
+    //                 <td>${element.month}</td>
+    //                 <td>${element.expenses}</td>
+    //                 <td>${element.income}</td>
+    //         </tr>`
+    //         table.innerHTML += r;
+    // });
+
+    var end=window.performance.now();
+    console.log(end-start);
+
     </script>
 
 </body>
