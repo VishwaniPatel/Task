@@ -1,0 +1,60 @@
+.topbar {
+  height: $header-height;
+  flex-shrink: 0;
+  padding: 0 30px;
+
+}
+
+.search-wrapper {
+  padding: 20px;
+
+  
+  .icon{
+    padding-right: 20px;
+  }
+
+  .search {
+    border: none;
+    color: $black;
+  }
+}
+
+.action-list{
+  .notification{
+    color: #6a6a6a;
+    position: relative;
+    margin-right:  40px;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '';
+      height: 6px;
+      width: 6px;
+      background: $primary;
+      border-radius: 50%;
+  }
+  }
+  
+}
+
+.user-profile {
+  @include flex-center;
+  .user-name{
+    @include flex-center;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background-color: #f77ed8;
+    border-radius: 50%;
+    color: #fff;
+    justify-content:center;
+    
+}
+
+.icon {
+  font-size: 14px;
+  color: #7f7f7f;
+}
+}
