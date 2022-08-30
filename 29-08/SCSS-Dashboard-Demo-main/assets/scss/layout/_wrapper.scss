@@ -33,11 +33,21 @@
   display: flex;
   flex-wrap: wrap;
 
-  .course-item {
+.course-item {
     display: flex;
     flex-direction: column;
-    width: 280px;
-    flex-grow: 1;
+
+  @include flex(0, 0, 25%);
+    max-width: 25%;
+  }
+
+  @media (max-width: 992px) {
+    @include flex(0, 0, 33.33%);
+    max-width: 33.33%;
+  }
+  @media (max-width: 500px) {
+    @include flex(0, 0, 50%);
+      max-width: 50%;
   }
 }
 
