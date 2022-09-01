@@ -1,5 +1,17 @@
-@import "vendor/index";
-@import "base/index";
-@import "utilities/index";
-@import "components/index";
-@import "layout/index";
+// Base Files
+@import 'base/index';
+
+// Vendor Files
+@import 'vendor/bootstrap_base';
+@import 'vendor/bootstrap_components';
+// @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+
+// Component Files
+@import 'components/index';
+
+// Layout Files
+@import 'layout/index';
+
+// Utilities Files
+@import 'utilities/index';

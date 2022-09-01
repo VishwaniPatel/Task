@@ -1,0 +1,25 @@
+// Theme Colors
+$primary: #0e6cc4;
+$white: #ffffff;
+$success: #1eca1a;
+$danger: #e43536;
+$warning: #dc9909;
+$info: #8d63d3;
+
+// Body
+$body-color: $white;
+$body-bg: #1a1c28;
+
+// Sidebar
+$nav-link-color: #7c7f88;
+$nav-link-active-color: $primary;
+$nav-link-active-bg: $primary;
+
+$theme-colors: (
+  "primary": $primary,
+  "warning": $warning,
+  "success": $success,
+  "danger": $danger,
+  "info": $info,
+  "light": $white
+);

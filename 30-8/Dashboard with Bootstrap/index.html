@@ -4,18 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard with Bootstrap</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    <div class="page-wrapper">
-        <aside class="sidebar">
-            <figure>
-
+    <div class="d-flex h-100">
+         <!-- Aside -->
+        <aside class="primary-aside d-flex flex-column">
+             <!-- brand logo -->
+            <figure class="d-flex align-items-center justify-content-center py-3 px-4">
+                <span class="bi bi-stars text-primary pe-3"></span>
+                <h6 class="mb-0 d-flex">
+                    <span class="text-primary">Star</span>
+                    <span>Mall</span>
+                </h6>
             </figure>
-            <ul>
-                <li>
-                    
+            <!-- End: brand logo -->
+            
+            <!-- Nav List -->
+            <ul class="nav flex-column flex-nowrap flex-grow-1 overflow-auto">
+                <li class="nav-item">
+                    <a class="nav-link active d-flex d-lg-block" href="#">
+                        <span class="nav-icon bi bi-bricks pe-3"></span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="nav-icon bi bi-person-fill pe-3"></span>
+                        <span class="nav-text">Staff</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="nav-icon bi bi-bag-fill pe-3"></span>
+                        <span class="nav-text">Shops</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="nav-icon bi bi-geo-alt-fill pe-3"></span>
+                        <span class="nav-text">Branches</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="nav-icon bi bi-calendar-event-fill pe-3"></span>
+                        <span class="nav-text">Events</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- End: Nav list -->
+
+            <!-- Event Start -->
+            <div class="event-wrapper text-center">
+                <div class="event">
+                <img src="./assets/images/cal.png" alt="" height="80px" width="80px">
+                <p class="mt-3">You can easily manage your events</p>
+                <button type="button" class="btn btn-light w-100 mt-3">Manage Events</button>
+            </div>
+            </div>
+            <!-- Event End -->
+
+            <!-- Nav list -->
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="nav-icon bi bi-gear-fill pe-3"></span>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="#">
+                        <span class="nav-icon bi bi-box-arrow-right pe-3"></span>
+                        <span class="nav-text">Logout</span>
+                    </a>
                 </li>
             </ul>
         </aside>
