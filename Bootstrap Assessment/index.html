@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Assessment</title>
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="d-flex h-100">
+      <!-- Aside -->
+      <aside class="primary-aside d-flex flex-column">
+        <!-- brand logo -->
+        <figure
+          class="d-flex align-items-center justify-content-center py-4 px-3"
+        >
+          <span class="fa-regular fa-heart text-primary me-2"></span>
+          <h3 class="mb-0">
+            <span class="text-secondary">FITTLE</span>
+          </h3>
+        </figure>
+        <!-- End: brand logo -->
+
+        <!-- Nav list -->
+        <ul class="nav flex-column flex-nowrap flex-grow-1 overflow-auto">
+          <li class="nav-item text-center ">
+            <a class="nav-link active d-flex flex-column position-relative" href="#">
+              <span class="nav-icon fa-solid fa-gauge py-3"></span>
+              <span class="nav-text">Dashboard</span>
+              <span class="position-absolute triangle bottom-0 end-0"></span>
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-solid fa-building py-3"></span>
+              <span class="nav-text">My Subscription</span>
+            </a>
+          </li>
+
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-solid fa-landmark py-3"></span>
+              <span class="nav-text">My Studio</span>
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-solid fa-toolbox py-3"></span>
+              <span class="nav-text">Post A Job</span>
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-regular fa-calendar py-3"></span>
+              <span class="nav-text">My Events</span>
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-regular fa-message py-3"></span>
+              <span class="nav-text">Notification</span>
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link d-flex flex-column" href="#">
+              <span class="nav-icon fa-solid fa-gear py-3"></span>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+        <!-- End: Nav list -->
+      </aside>
+      <!-- End: Aside -->
+      <section class="wrapper flex-grow-1 overflow-hidden d-flex flex-column">
+        <header class="header-wrapper w-100">
+          <nav class="navbar d-flex align-items-center py-4 px-3">
+            <!-- Searchbar -->
+            <div class="container-fluid ms-2">
+              <form class="d-flex align-items-center" role="search">
+                <span class="fa-solid fa-magnifying-glass me-3"></span>
+                <input
+                  class="serach-bar"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </form>
+            </div>
+            <!-- Actions -->
+            <div class="d-flex align-items-center">
+              <a href="" class="position-relative me-4">
+                <span class="fa-solid fa-bell"></span>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle p-1 bg-danger rounded-circle"
+                ></span>
+              </a>
+              <span class="me-4">Ryan Gosling</span>
+              <div class="image-wrapper overflow-hidden">
+                <img
+                  class="img-content"
+                  src="assets/images/profile-img.png"
+                  alt="profile pic"
+                />
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!-- End Header -->
+        <!-- main content  -->
+        <main class="main-wrapper flex-grow-1 d-flex flex-column">
+        <div class="p-3">
+          <h5 class="mb-3  text-dark">Dashboard</h5>
+          <p>Hello, Ryan! Check out what's happing today!</p>
+        </div>
+          <div class="p-3">
+          <!-- Row 1 -->
+          <div class="row p-3 mb-4 wrapper">
+            <div
+              class="col-12 d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center">
+                <span class="icon fa-solid fa-circle-exclamation pe-3"></span>
+                <p class="pe-3">Thanks for joining YPC! Go ahead and</p>
+                <button type="button" class="btn btn-primary">
+                  Create now
+                </button>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="row wrapper p-3 mb-4">
+            <div
+              class="col-12 d-flex align-items-center justify-content-between"
+            >
+              <div class="d-flex align-items-center">
+                <span class="icon pe-3"></span>
+                <p class="pe-3">You have <span class="text-dark">2</span> unread notifications.</p>
+                <button type="button" class="btn btn-primary-light">
+                  Check Now
+                </button>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+        </div>
+          <!-- Row 3 -->
+          <div class="row mb-4">
+            <div class="col-6">
+                <!-- Card Heading -->
+              <div class="card">
+                <div
+                  class="d-flex align-items-center justify-content-between w-100 wrapper p-3"
+                >
+                  <h4 class="card-title mb-0 text-dark">New Brisbane Instructors - 02</h4>
+                  <div class="d-flex align-items-center">
+                    <span class="fa-solid fa-eye me-2"></span>
+                    <p class="me-2">View All</p>
+                    <span class="fa-solid fa-caret-right"></span>
+                  </div>
+                </div>
+                <div class="left-card overflow-auto ">
+                <div class="wrapper p-3">
+
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                    <button type="button" class="btn btn-primary me-4">
+                      Part Time
+                    </button>
+                    <button type="button" class="btn btn-primary-light me-4">
+                      Aerial Yoga
+                    </button>
+                    <button type="button" class="btn btn-primary-light">
+                      Yoga
+                    </button>
+                  
+                </div>
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                    <button type="button" class="btn btn-primary me-4">
+                      Part Time
+                    </button>
+                    <button type="button" class="btn btn-primary-light me-4">
+                      Aerial Yoga
+                    </button>
+                    <button type="button" class="btn btn-primary-light">
+                      Yoga
+                    </button>
+                  
+                </div>
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                    <button type="button" class="btn btn-primary me-4">
+                      Part Time
+                    </button>
+                    <button type="button" class="btn btn-primary-light me-4">
+                      Aerial Yoga
+                    </button>
+                    <button type="button" class="btn btn-primary-light">
+                      Yoga
+                    </button>
+                  
+                </div>
+            </div>
+              </div>
+            </div>
+            <div class="col-6 overflow-auto">
+                <!-- Card Heading -->
+              <div class="card">
+                <div
+                  class="d-flex align-items-center justify-content-between w-100 wrapper p-3"
+                >
+                  <h4 class="card-title mb-0 text-dark">Most Popular Brishbane Classes + 02</h4>
+                  <div class="d-flex align-items-center">
+                    <span class="fa-solid fa-eye me-2"></span>
+                    <p class="me-2">View All</p>
+                    <span class="fa-solid fa-caret-right"></span>
+                  </div>
+                </div>
+                <div class="right-card overflow-auto ">
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>                 
+                </div>
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                  
+                </div>
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                  
+                </div>
+                <div class="wrapper p-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h5 class="mb-3 text-dark">Thomas Budiman</h5>
+                      <div class="d-flex align-items-center">
+                        <span class="fa-solid fa-clock me-2"></span>
+                        <p>5min</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                      <p>24 Hours Fitness</p>
+                      <span>|</span>
+                      <p>1050 Brown Street, Brishbane</p>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- End main content -->
+      </section>
+    </div>
+  </body>
+</html>

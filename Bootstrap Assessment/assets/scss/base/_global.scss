@@ -1,0 +1,29 @@
+// Global styles goes here
+html,
+body {
+    height  : 100%;
+    width: 100%;
+    overflow: hidden;
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+  
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+       
+      
+      ::-webkit-scrollbar-thumb {
+        background: $secondary; 
+        border-radius: 10px;
+      }
+}
+
+.d-grid {
+    display: grid;
+}
+
+.overflow-vertical {
+    overflow-x: hidden;
+    overflow-y: auto;
+}

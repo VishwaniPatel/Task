@@ -1,0 +1,17 @@
+.main-wrapper{
+    padding: 30px;
+    font-size: 16px;
+
+    .wrapper{
+        background-color: $white;
+        box-shadow: 2px 2px 10px $box-shadow;
+        z-index: 3;
+    }
+
+    .icon{
+        color: #e9eaec;
+        font-size: 30px;
+    }
+
+    
+}
