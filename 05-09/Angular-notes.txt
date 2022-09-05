@@ -1,0 +1,111 @@
+1. What is Angular?
+Angular is an open-source
+Angular is a development platform, built on TypeScript
+It helps in creating reactive single page application (SPA) and is completely based on the concept of components
+A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more
+Latest version: 14.1.0 (20 July 2022)
+
+2.What is framework?
+Collection of libraries
+
+3.Angular Installation steps
+- Install Node.js
+- node -v (For version check)
+- npm -v
+- npm install -g @angular/cli to install Angular CLI
+
+4. Difference between npm and yarn
+NPM and Yarn are package managers that help to manage a project’s dependencies.
+npm: It is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. It consists of a command-line client, also called npm, and an online database of public and paid-for private packages called the npm registry.
+yarn: It stands for Yet Another Resource Negotiator and it is a package manager just like npm. It was developed by Facebook and is now open-source. The intention behind developing yarn(at that time) was to fix performance and security concerns with npm.
+
+5. V8 Engine
+V8 is the Javascript engine inside of node.js that parses and runs your Javascript. The same V8 engine is used inside of Chrome to run javascript in the Chrome browser. Google open-sourced the V8 engine and the builders of node.js used it to run Javascript in node.js.
+
+6. What is workspace?
+A workspace is a set of Angular applications and libraries. The angular.json file at the root level of an Angular workspace provides workspace-wide and project-specific (application or library) configuration defaults for build and development tools.
+
+To create workspace:
+ng new <name>
+
+7. What is library?
+A library typically includes reusable code that defines components, services, and other Angular artifacts (pipes, directives) that you import into a project. A library is packaged into an npm package for publishing and sharing.
+
+To install the library package:
+ng add <lib_name>
+
+To create a new library:
+ng generate library new-lib
+
+8. What is project?
+A project is the set of files that comprise a standalone application or a shareable library.
+
+To create new project:
+ng new <my-project>
+The CLI installs the necessary Angular npm packages and other dependencies in a new workspace, with a root-level application named my-project.
+
+9. Angular 13 v/s Angular 14 features
+- Angular 13:
+Typescript version 4.4.2
+Removal of View Engine
+Support for NodeJS
+Need to add title with route.title
+
+- Angular 14:
+TypeScript 4.7
+Standalone Components
+Strictly Typed Forms
+Angular CLI Auto-Completion
+Enhanced template diagnostics in compiler
+Latest Primitives in the Angular CDK
+Built-in Enhancements
+Need to add title with route.title
+
+10. Difference between dependencies, devDependencies and peerDependencies
+Dependencies: In package.json file, there is an object called dependencies and it consists of all the packages that are used in the project with its version number. So, whenever you install any library that is required in your project that library you can find it in the dependencies object. 
+Dev Dependencies: In package.json file, there is an object called as dev Dependencies and it consists of all the packages that are used in the project in its development phase and not in the production or testing environment with its version number. So, whenever you want to install any library that is required only in your development phase then you can find it in the dev Dependencies object. 
+Peer Dependencies: In package.json file, there is an object called as peerDependencies and it consists of all the packages that are exactly required in the project or to the person who is downloading and the version numbers should also be the same.
+
+11. Tilde (~) notation, Caret (^) notation and without notation
+
+The syntax of the npm version:
+
+Major.Minor.Patch
+
+Tilde (~) notation: It is used to match the most recent patch version. Tilde ~ notation freezes the major version and minor version. As we know patch updates are bug fixes that’s why we can say ~ notation allows us to automatically accept bug fixes.
+Caret (^) notation: It is used for automatically updating the minor updates along with patch updates. 
+If there is not notation in version it must match version exactly.
+
+12. Difference between Typescript and Javascript
+
+Javascript:	
+JavaScript is a scripting language.	
+There is no static typing. ex: var num.	
+JavaScript doesn’t supports interfaces.	
+JavaScript has no optional parameter feature.	
+JavaScript doesn’t supports generics.	
+JavaScript doesn’t have modules support.
+Number, string etc. are the objects.
+
+Typescript:
+TypeScript supports object oriented programming language concepts.
+TypeScript supports optional static typing
+TypeScript supports interfaces.
+TypeScript has optional parameter feature.
+TypeScript supports modules .
+TypeScript Supports generics.
+Number, string etc. are the interfaces.
+
+13. What is Babel?
+Babel is a JavaScript transpiler that converts edge JavaScript into plain old ES5 JavaScript that can run in any browser
+
+14. What is webpack?
+Webpack documentation itself. It says Webpack may be a module bundler for contemporary JavaScript applications.
+
+
+
+
+
+
+
+
