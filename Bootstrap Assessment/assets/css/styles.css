@@ -5,19 +5,6 @@ body {
   width: 100%;
   overflow: hidden;
 }
-html ::-webkit-scrollbar,
-body ::-webkit-scrollbar {
-  width: 5px;
-}
-html ::-webkit-scrollbar-track,
-body ::-webkit-scrollbar-track {
-  background: transparent;
-}
-html ::-webkit-scrollbar-thumb,
-body ::-webkit-scrollbar-thumb {
-  background: #7c7f88;
-  border-radius: 10px;
-}
 
 .d-grid {
   display: grid;
@@ -7917,6 +7904,19 @@ textarea.form-control-lg {
   height: 400px;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c7f88;
+  border-radius: 10px;
+}
+
 .primary-aside {
   flex: 0 0 170px;
   max-width: 170px;
@@ -7931,6 +7931,7 @@ textarea.form-control-lg {
 .primary-aside .nav-item .nav-link.active, .primary-aside .nav-item .nav-link:hover {
   background-color: rgba(46, 159, 154, 0.15);
   color: #2e9f9a;
+  font-weight: 500;
 }
 .primary-aside .nav-item .nav-icon {
   font-size: 25px;
