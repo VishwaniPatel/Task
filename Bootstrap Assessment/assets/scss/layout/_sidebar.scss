@@ -1,10 +1,16 @@
 // Styles for Sidebar lies here
+.logo{
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 3px;
+}
+
+
 .primary-aside {
     flex     : 0 0 170px;
     max-width: 170px;
     background-color: $white;
-    box-shadow: 5px 0px  10px $box-shadow;
-    z-index: 5;
+    box-shadow: 10px 0px  15px $box-shadow;
+    z-index: 10;
 
     figure{
         height: $header-hight;
@@ -18,7 +24,7 @@
 
                 &.active,
                 &:hover {
-                    background-color: rgba($nav-link-active-bg, 0.15);
+                    background-color: #f6fafd;
                     color           : $nav-link-active-color;
                     font-weight: 500;
                 }

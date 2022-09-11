@@ -1,8 +1,9 @@
 .btn {
   border-radius: $btn-border-radius;
   &-primary {
-    box-shadow: 0px 5px 8px lighten($color: $primary, $amount: 30%);
+    box-shadow: 2px 0px 10px lighten($color: $primary, $amount: 30%);
     color: $white;
+
   }
 }
 .btn-primary-light {
