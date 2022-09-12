@@ -7885,13 +7885,14 @@ textarea.form-control-lg {
   border-radius: 25px;
 }
 .btn-primary {
-  box-shadow: 2px 0px 10px #89ddd9;
+  box-shadow: 0px 3px 10px #89ddd9;
   color: #ffffff;
 }
 
 .btn-primary-light {
   color: #2e9f9a;
   background-color: #d8f4f3;
+  font-weight: 500;
 }
 
 .card {
@@ -7959,8 +7960,9 @@ textarea.form-control-lg {
 .header-wrapper .navbar .container-fluid, .header-wrapper .navbar .container-sm, .header-wrapper .navbar .container-md, .header-wrapper .navbar .container-lg, .header-wrapper .navbar .container-xl, .header-wrapper .navbar .container-xxl {
   width: 50%;
 }
-.header-wrapper .navbar .serach-bar {
+.header-wrapper .navbar .form-control {
   border: none;
+  background-color: #ffffff;
 }
 .header-wrapper .image-wrapper {
   height: 40px;
