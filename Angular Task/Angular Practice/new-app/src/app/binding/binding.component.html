@@ -1,0 +1,46 @@
+<!-- One way binding -->
+
+<!-- Interpolation binding -->
+<h2>{{text}}</h2>
+
+<!-- Property binding -->
+<span [innerHTML]="firstname"></span>
+
+<!-- Attribute binding and display data from object-->
+<table border="1">
+  <thead>  
+    <tr>  
+        <th [attr.colspan]="colspan">Student Details</th>  
+        
+    </tr>  
+</thead>  
+<tbody>  
+    <tr>  
+        <td>First Name</td>  
+        <td>{{tableData.fname}}</td>  
+    </tr>  
+    <tr>  
+        <td>Last Name</td>  
+        <td>{{tableData.lastName}}</td>  
+    </tr>  
+    <tr>  
+        <td>Gender</td>  
+        <td>{{tableData.gender}}</td>  
+    </tr>  
+    <tr>  
+        <td>Qualification</td>  
+        <td>{{tableData.qualification}}</td>  
+    </tr>  
+</tbody> 
+</table>
+
+<!-- Event binding -->
+<button (click)='onClick()'>Click me</button>
+
+<!-- Two way binding -->
+<p> Enter the value  : </p> <br>
+<input type="text" [(ngModel)]='data1'> 
+<br>  
+<p>Entered value : Hi  {{data1}} </p>
+
+

@@ -1,0 +1,19 @@
+<h2>NgSwitch Binding</h2>
+
+<div>
+  <label *ngFor="let i of items">
+    <div>
+        <input type="radio" name="items" [(ngModel)]="selectItem" [value]="i.name">{{i.name}} 
+    </div> 
+  </label> 
+  <br>
+</div>
+
+<div [ngSwitch]="selectItem">
+  <span class="text-primary" *ngSwitchCase="'success'">Success</span>
+  <span class="text-info" *ngSwitchCase="'info'">Info</span>
+  <span class="text-warning" *ngSwitchCase="'warning'">Warning</span>
+  <span class="text-danger" *ngSwitchCase="'danger'">Danger</span>
+  <span class="other" *ngSwitchCase="'other'">Other</span>
+  <span class="other" *ngSwitchDefault="'other'"> Default Other</span> 
+</div>
