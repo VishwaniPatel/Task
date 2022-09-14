@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { BindingComponent } from './binding/binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AttributeComponent } from './attribute/attribute.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StructuralDirectivesComponent,
     BindingComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AttributeComponent
   ],
   imports: [
     BrowserModule,
