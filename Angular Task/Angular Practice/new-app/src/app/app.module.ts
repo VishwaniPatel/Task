@@ -8,6 +8,7 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { BindingComponent } from './binding/binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AttributeComponent } from './attribute/attribute.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { AttributeComponent } from './attribute/attribute.component';
     StructuralDirectivesComponent,
     BindingComponent,
     PageNotFoundComponent,
-    AttributeComponent
+    AttributeComponent,
+    PipeComponent,
+   
   ],
   imports: [
     BrowserModule,

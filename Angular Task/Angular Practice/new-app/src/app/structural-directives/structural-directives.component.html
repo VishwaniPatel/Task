@@ -1,5 +1,14 @@
+<h2>NgIF</h2>
+<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+    show = {{show}}
+    <br>
+    <div *ngIf="show; else elseBlock">Text to show</div>
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+
+
 <h2>NgSwitch Binding</h2>
 
+<!-- ngFor -->
 <div>
   <label *ngFor="let i of items">
     <div>
@@ -8,7 +17,7 @@
   </label> 
   <br>
 </div>
-
+<!-- nfSwitch -->
 <div [ngSwitch]="selectItem">
   <span class="text-primary" *ngSwitchCase="'success'">Success</span>
   <span class="text-info" *ngSwitchCase="'info'">Info</span>

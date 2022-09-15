@@ -9,8 +9,10 @@ export class StructuralDirectivesComponent implements OnInit {
 
   public selectItem: string;
   public items: any;
+  public show:boolean;
   constructor() {
     this.selectItem="";
+    this.show = true;
    }
   
   ngOnInit(): void {

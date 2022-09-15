@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Upper Case Pipe</h4>
+      <p>{{'Welcome to Angular Pipes' | uppercase}}</p>
+      <p>{{'Welcome to Angular Pipes' | lowercase}}</p>
+      <p>{{'welcome to angular pipes' | titlecase}}</p>
+      <p>{{123456.14 | number}}</p>
+      <p>{{1.3456 | number:'3.1-2'}}</p>
+      <p>{{1234567.555 | currency}}</p>
+      <p>{{1234567 | currency:'INR'}}</p>
+      <p>{{1234567 | currency:'CAD':'symbol' :'1.2-5'}}</p>
+      <p>{{1234567 | currency:'CAD':'symbol' :'1.2-5'}}</p>
+      <p>{{0.25645 | percent}}</p>
+      <p>{{0.25645 | percent:'3.1-5'}}</p>
+      <p>{{0.25645 | percent:'1.5-5'}}</p>
+      <p>{{[1,2,3,4,5,6] | slice : 2}}</p>
+      <p>{{[1,2,3,4,5,6] | slice : 2:4}}</p>
+      <p>{{data | json}}</p>
+      <p>{{today | date}}</p>
+      <p>{{today | date:'fullDate'}}</p>
+    </div>
+</div>
