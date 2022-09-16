@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-customer-form',
@@ -7,28 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./customer-form.component.scss']
 })
 export class CustomerFormComponent implements OnInit {
-
-  public customers:any;
+  public title:string;
+  custId: number;
   constructor(
-    private route:Router
+    public router:Router,
+    private activatedRouter: ActivatedRoute
+    
   ) {
-    this.customers = [{
-      id:1,
-      name:"Vishwani"
-    },
-  {
-    id:2,
-    name:"Vini"
-  }]
+   
+    this.custId = this.activatedRouter.snapshot.params['custId'];
+    
+    console.log(this.custId);
+    this.title = this.custId ? 'Edit Customer' : 'Add Customer';
    }
 
   ngOnInit(): void {
+
   }
-  onAdd()
+  onSave()
   {
-    console.log("Add");
-  }
-  onClick() {
-    this.route.navigate(['customers','list']);
+    this.router.navigate(['customers','list'])
   }
 }

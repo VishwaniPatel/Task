@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor() { }
+  public customers:any;
+  
+
+  constructor(
+    private route:Router
+    
+  ) { 
+    this.customers = [{
+      id:1,
+      name:"Vishwani"
+    },
+  {
+    id:2,
+    name:"Vini"
+  }];
+ 
+  }
 
   ngOnInit(): void {
   }
+  
+  onAdd() {
+    this.route.navigate(['customers','add']);
 
+  }
+  onEdit(){
+    this.route.navigate(['customers','edit']);
+    
+  }
 }

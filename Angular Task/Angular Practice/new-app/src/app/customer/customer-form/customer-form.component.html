@@ -1,15 +1,4 @@
 <p>customer-form works!</p>
-<table>
-    <tr>
-        <th>Customer Id</th>
-        <th>Customer Name</th>
-        <th>Edit</th>
-    </tr>
-    <tr *ngFor="let i of customers">
-        <td>{{i.id}}</td>
-        <td>{{i.name}}</td>
-        <td><button>Edit</button></td>
-    </tr>
-</table>
-<button (click)="onAdd()">Add</button>
-<button (click)="onClick()">Save</button>
+
+<button (click)="onSave()">Save</button>
+<p>{{title}}</p>

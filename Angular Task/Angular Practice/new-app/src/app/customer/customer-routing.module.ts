@@ -21,7 +21,11 @@ const routes: Routes = [
          component: CustomerFormComponent 
        },
        {
-        path: ':custId',
+        path: 'edit/:custId',
+        component: CustomerFormComponent
+      },
+      {
+        path: 'add',
         component: CustomerFormComponent
       }
   
