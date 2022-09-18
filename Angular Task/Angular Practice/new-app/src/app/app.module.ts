@@ -9,6 +9,8 @@ import { BindingComponent } from './binding/binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AttributeComponent } from './attribute/attribute.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PipeComponent } from './pipe/pipe.component';
     PageNotFoundComponent,
     AttributeComponent,
     PipeComponent,
+    CustomPipeComponent,
+  
    
   ],
   imports: [

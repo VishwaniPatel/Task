@@ -26,4 +26,3 @@ export class PipeComponent implements OnInit {
   }
   
 };
-
