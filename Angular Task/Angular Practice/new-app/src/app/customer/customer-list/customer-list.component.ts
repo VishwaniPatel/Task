@@ -33,8 +33,8 @@ export class CustomerListComponent implements OnInit {
     this.route.navigate(['customers','add']);
 
   }
-  onEdit(){
-    this.route.navigate(['customers','edit']);
+  // onEdit(){
+  //   this.route.navigate(['customers','edit']);
     
-  }
+  // }
 }

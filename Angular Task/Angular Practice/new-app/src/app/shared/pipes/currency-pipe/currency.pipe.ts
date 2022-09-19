@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'customPipe',
-  pure: true
+  name: 'custcurrency'
 })
-export class CustomPipePipe implements PipeTransform {
+export class CurrencyPipe implements PipeTransform {
 
   transform(value: number, countryCode: string): any {
     let newValue;

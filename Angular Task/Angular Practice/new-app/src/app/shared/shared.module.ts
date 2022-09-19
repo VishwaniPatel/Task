@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomPipePipe } from './pipes/custom-pipe.pipe';
+import { GenderPipe } from './pipes/gender-pipe/gender.pipe';
+import { CurrencyPipe } from './pipes/currency-pipe/currency.pipe';
 
 
 
 @NgModule({
   declarations: [
-    
-  
-    CustomPipePipe
+              GenderPipe,
+              CurrencyPipe
   ],
   imports: [
     CommonModule
   ],
   exports:[
-    CustomPipePipe
+    GenderPipe,
+    CurrencyPipe
   ]
 })
 export class SharedModule { }

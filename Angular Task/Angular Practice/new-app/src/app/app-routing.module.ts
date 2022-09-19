@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AttributeComponent } from './attribute/attribute.component';
 import { BindingComponent } from './binding/binding.component';
+import { CustomPipeComponent } from './pipe/custom-pipe/custom-pipe.component';
 import { CustomerComponent } from './customer/customer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PipeComponent } from './pipe/pipe.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { InbuiltPipeComponent } from './pipe/inbuilt-pipe/inbuilt-pipe.component';
 
 const routes: Routes = [
   {
@@ -27,9 +28,12 @@ const routes: Routes = [
   },
   {
     path:"Pipe",
-    component:PipeComponent
+    component:InbuiltPipeComponent
   },
- 
+  {
+    path:"customePipe",
+    component:CustomPipeComponent
+  },
   { 
     path: 'customers', 
     loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule),

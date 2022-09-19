@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pipe',
-  templateUrl: './pipe.component.html',
-  styleUrls: ['./pipe.component.scss']
+  selector: 'app-inbuilt-pipe',
+  templateUrl: './inbuilt-pipe.component.html',
+  styleUrls: ['./inbuilt-pipe.component.scss']
 })
-export class PipeComponent implements OnInit {
+export class InbuiltPipeComponent implements OnInit {
   public data:any;
   public today:Date;
-  
+
   constructor() { 
 
     this.data = {

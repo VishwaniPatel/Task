@@ -8,8 +8,10 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { BindingComponent } from './binding/binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AttributeComponent } from './attribute/attribute.component';
-import { PipeComponent } from './pipe/pipe.component';
-import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { CustomPipeComponent } from './pipe/custom-pipe/custom-pipe.component';
+import { GenderPipe } from './shared/pipes/gender-pipe/gender.pipe';
+import { SharedModule } from './shared/shared.module';
+import { PipeModule } from './pipe/pipe.module';
 
 
 @NgModule({
@@ -19,15 +21,12 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
     BindingComponent,
     PageNotFoundComponent,
     AttributeComponent,
-    PipeComponent,
-    CustomPipeComponent,
-  
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    PipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
