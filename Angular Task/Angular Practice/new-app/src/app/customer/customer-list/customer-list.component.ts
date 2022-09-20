@@ -17,11 +17,13 @@ export class CustomerListComponent implements OnInit {
   ) { 
     this.customers = [{
       id:1,
-      name:"Vishwani"
+      name:"Vishwani",
+      gender:"female"
     },
   {
     id:2,
-    name:"Vini"
+    name:"Nilu",
+    gender:"male"
   }];
  
   }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { CustomPipeComponent } from './pipe/custom-pipe/custom-pipe.component';
 import { GenderPipe } from './shared/pipes/gender-pipe/gender.pipe';
 import { SharedModule } from './shared/shared.module';
 import { PipeModule } from './pipe/pipe.module';
+import { ReformsModule } from './reforms/reforms.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PipeModule } from './pipe/pipe.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PipeModule
+    PipeModule,
+    ReformsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

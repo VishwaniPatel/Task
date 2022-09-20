@@ -9,27 +9,27 @@ export class CustomPipeComponent implements OnInit {
   Person_Details: any[] = [
     {
       Id:1,
-      Name: "Jinal",
+      Name: "Vishwani",
       Gender: "F"
     },
     {
       Id:2,
-      Name: "Arpan",
+      Name: "Parimal",
       Gender: "M"
     },
     {
       Id:3,
-      Name: "Hetal",
+      Name: "Bhakti",
       Gender: "F"
     },
     {
       Id:4,
-      Name: "Roshan",
+      Name: "Nilay",
       Gender: "M"
     },
     {
       Id:5,
-      Name: "Pradip",
+      Name: "Rajan",
       Gender: "M"
     }
   ];

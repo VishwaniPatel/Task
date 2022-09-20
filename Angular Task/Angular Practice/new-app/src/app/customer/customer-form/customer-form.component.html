@@ -2,3 +2,39 @@
 
 <button (click)="onSave()">Save</button>
 <p>{{title}}</p>
+
+<form #customerform="ngForm" (ngSubmit)="onSubmit(customerform)">
+    <div class="mb-3">
+        <input type="text" class="form-control" name="firstname" placeholder="Enter the Firstname"
+            [(ngModel)]="customers.firstname" #firstname="ngModel" required>
+        <div
+            *ngIf="(firstname.invalid && firstname.touched) || (isSubmitted && !firstname.touched && !firstname.dirty && firstname.errors?.['required'])">
+            <p class="text-danger">Enter the firstname</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="lastname" placeholder="Enter the lastname"
+            [(ngModel)]="customers.lastname" #lastname="ngModel" required>
+        <div
+            *ngIf="(lastname.invalid && lastname.touched) || (isSubmitted && !lastname.touched && !lastname.dirty && lastname.errors?.['required'])">
+            <p class="text-danger">Enter the lastname</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="email" placeholder="Enter the Email ID"
+            [(ngModel)]="customers.email" #email="ngModel" required>
+        <div
+            *ngIf="(email.invalid && email.touched) || (isSubmitted && !email.touched && !email.dirty && email.errors?.['required'])">
+            <p class="text-danger">Enter the emailid</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="mobilenumber" placeholder="Enter the Mobile number"
+            [(ngModel)]="customers.mobilenumber" #mobilenumber="ngModel" required>
+        <div
+            *ngIf="(mobilenumber.invalid && mobilenumber.touched) || (isSubmitted && !mobilenumber.touched && !mobilenumber.dirty && mobilenumber.errors?.['required'])">
+            <p class="text-danger">Enter the mobile number</p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

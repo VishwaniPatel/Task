@@ -7,6 +7,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { InbuiltPipeComponent } from './pipe/inbuilt-pipe/inbuilt-pipe.component';
+import { ReformsComponent } from './reforms/reforms.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   { 
     path: 'customers', 
     loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule),
+  },
+  {
+    path:'reactiveform',
+    component: ReformsComponent
   },
   {
     path:"**",
