@@ -1,0 +1,5 @@
+<div style="width:500px; height: auto; border: solid 2px #bce4f7; padding:20px;">
+    <h1>App Component</h1>
+    <h3>Ship to: {{addresType}} <ng-container *ngIf="addresType != null">Address</ng-container></h3>
+    <app-child (selectedAddress)="addressChangeEventHandler($event)"></app-child>
+  </div>
