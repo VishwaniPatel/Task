@@ -1,0 +1,22 @@
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>D. O. B.</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let i of userlist; let j = index">
+        <td>{{i.name | titlecase}}  </td>
+        <td>{{i.gender | uppercase }}</td>
+        <td>{{i.dob | date:'mediumDate' }}</td>
+        <td>{{i.salary |  currency:'INR'}}</td>
+        <td>
+            <button [routerLink] = "['../details']" [queryParams]="i" >Details</button>
+            <button  (click)="onEdit(i)">Edit</button>
+            <button  (click)="onDelete(j)">Delete</button>
+        </td>
+        <!-- [routerLink] = "['../edit']" <td><button [routerLink] = "['../edit' , i.id]" [queryParams]="{name:i.name}" [fragment]="i.gender">Edit</button></td> -->
+        <!-- <!-- <td><button (click)="onEdit()">Edit</button></td> -->
+    </tr> 
+</table>

@@ -1,0 +1,62 @@
+<p>customer-form works!</p>
+<button class="btn btn-outline-success">Add Customers</button>
+
+
+            <h4>{{title}} Customer</h4>
+            <form [formGroup]="customerform" >
+                <div class="form-group">
+            
+                  <label>Name</label>
+                  <input type="text" class="form-control" placeholder="Enter name" formControlName="name"
+                  [ngClass]="{'is-invalid' : customerform.controls['name'].invalid && (isSubmitted || customerform.controls['name'].touched || customerform.controls['name'].dirty),
+                'is-valid' : customerform.controls['name'].valid && (isSubmitted || customerform.controls['name'].touched || customerform.controls['name'].dirty)}"
+                >
+                <div *ngIf="customerform.controls['name'].invalid && (isSubmitted || customerform.controls['name'].touched || customerform.controls['name'].dirty)">
+                    <p class="text-danger" *ngIf="customerform.controls['name'].errors?.['required']">Name is required.</p>
+                    <p class="text-danger" *ngIf="customerform.controls['name'].errors?.['minlength']">Name have minimum length of 3 charecter.</p>
+                </div>
+                  </div>
+            
+                <div class="form-group">
+            
+                  <label>Gender</label>
+                  <input type="text" class="form-control" placeholder="Enter gender" formControlName="gender"
+                  [ngClass]="{'is-invalid' : customerform.controls['gender'].invalid && (isSubmitted || customerform.controls['gender'].touched || customerform.controls['gender'].dirty),
+                'is-valid' : customerform.controls['gender'].valid && (isSubmitted || customerform.controls['gender'].touched || customerform.controls['gender'].dirty)}"
+                >
+                <div *ngIf="customerform.controls['gender'].invalid && (isSubmitted || customerform.controls['gender'].touched || customerform.controls['gender'].dirty)">
+                    <p class="text-danger" *ngIf="customerform.controls['gender'].errors?.['required']">Gender is required.</p>
+                    <p class="text-danger" *ngIf="customerform.controls['gender'].errors?.['pattern']">Add only characters in gender field.</p>
+                </div>
+                </div>
+            
+                <div class="form-group">
+            
+                    <label>Date of Birth</label>
+                    <input type="date" class="form-control" placeholder="Enter Date of Birth" formControlName="dob"
+                    [ngClass]="{'is-invalid' : customerform.controls['dob'].invalid && (isSubmitted || customerform.controls['dob'].touched || customerform.controls['dob'].dirty),
+                  'is-valid' : customerform.controls['dob'].valid && (isSubmitted || customerform.controls['dob'].touched || customerform.controls['dob'].dirty)}"
+                  >
+                  <div *ngIf="customerform.controls['dob'].invalid && (isSubmitted || customerform.controls['dob'].touched || customerform.controls['dob'].dirty)">
+                      <p class="text-danger" *ngIf="customerform.controls['dob'].errors?.['required']">Date of Birth is required.</p>
+                  </div>
+                  </div>
+            
+            
+                  <div class="form-group">
+            
+                    <label>Salary</label>
+                    <input type="text" class="form-control" placeholder="Enter salary" formControlName="salary"
+                    [ngClass]="{'is-invalid' : customerform.controls['salary'].invalid && (isSubmitted || customerform.controls['salary'].touched || customerform.controls['salary'].dirty),
+                  'is-valid' : customerform.controls['salary'].valid && (isSubmitted || customerform.controls['salary'].touched || customerform.controls['salary'].dirty)}"
+                  >
+                  <div *ngIf="customerform.controls['salary'].invalid && (isSubmitted || customerform.controls['salary'].touched || customerform.controls['salary'].dirty)">
+                      <p class="text-danger" *ngIf="customerform.controls['salary'].errors?.['required']">Date of Birth is required.</p>
+                      <p class="text-danger" *ngIf="customerform.controls['salary'].errors?.['pattern']">Add only numbers in Salary field.</p>
+                  </div>
+                  </div>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                <!-- <button type="submit" class="btn btn-primary" (click)="onReset()">Reset</button> -->
+            </form>
+            
+
