@@ -1,1 +1,36 @@
 <p>customer-list works!</p>
+<h2 class="text-center">Customer List</h2>
+<br />
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>D.O.B</th>
+      <th>salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of userList">
+      <td>{{ customer.name | titlecase }}</td>
+      <td>{{customer.gender | uppercase}}</td>
+      <td>{{ customer.dob | date: "mediumDate" }}</td>
+      <td>{{ customer.salary | currency:'INR' }}</td>
+      <td>
+        <button
+         (click)="onDelete(customer.id)"
+        >
+          Delete
+        </button>
+        <button  (click)="onEdit(customer)">
+          Edit 
+        </button>
+        <button
+        >
+          Details
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

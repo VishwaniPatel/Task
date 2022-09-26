@@ -6,6 +6,8 @@ import { CustomersComponent } from './customers.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { userClass } from './user.model';
+import { CustomerService } from './service/customer.service';
 
 
 @NgModule({
@@ -19,6 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CustomersRoutingModule,
     ReactiveFormsModule,
     
+  ],
+  providers:[
+    CustomerService
   ]
 })
+
 export class CustomersModule { }

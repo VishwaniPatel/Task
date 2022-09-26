@@ -1,5 +1,3 @@
-<p>customer-form works!</p>
-<button class="btn btn-outline-success">Add Customers</button>
 
 
             <h4>{{title}} Customer</h4>
@@ -55,8 +53,8 @@
                       <p class="text-danger" *ngIf="customerform.controls['salary'].errors?.['pattern']">Add only numbers in Salary field.</p>
                   </div>
                   </div>
-                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-                <!-- <button type="submit" class="btn btn-primary" (click)="onReset()">Reset</button> -->
+                <button type="submit" class="btn btn-outline-success" (click)="onSubmit()">Submit</button>
+                <!-- <button type="submit" class="btn btn-primary" >Reset</button> -->
             </form>
-            
+<app-customer-list [userList]="customerData"></app-customer-list>           
 

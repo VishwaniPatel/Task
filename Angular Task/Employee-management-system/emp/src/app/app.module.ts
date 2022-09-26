@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 import { ShareModule } from './share/share.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomerService } from './service/customer.service';
+import { CustomerService } from './customers/service/customer.service';
 
 @NgModule({
   declarations: [
