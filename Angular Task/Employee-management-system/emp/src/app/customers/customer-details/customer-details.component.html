@@ -1,0 +1,8 @@
+
+<h2>Customer Details</h2>
+<ul class="list-group">
+    <li class="list-group">Customer Name: {{customer.name | titlecase}}</li>
+    <li class="list-group">Gender: {{customer.gender | uppercase}}</li>
+    <li class="list-group">Date of Birth: {{customer.dob | date : 'mediumDate'}}</li>
+    <li class="list-group">Salary: {{customer.salary | currency : 'INR'}}</li>
+</ul>

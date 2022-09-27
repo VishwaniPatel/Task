@@ -77,7 +77,7 @@ export class CustomerFormComponent implements OnInit {
   }
 
   private getCustomerById() : void{
-    this.customerservice.getCustomerById(this.id).subscribe(customer => {
+    this.customerservice.getCustomerById(Number(this.id)).subscribe(customer => {
       this.customerform.patchValue(customer)
 
     })

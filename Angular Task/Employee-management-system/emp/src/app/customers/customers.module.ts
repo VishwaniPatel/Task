@@ -8,13 +8,15 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { userClass } from './user.model';
 import { CustomerService } from './service/customer.service';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 
 @NgModule({
   declarations: [
     CustomersComponent,
     CustomerFormComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -32,7 +32,7 @@ export class CustomerListComponent implements OnInit {
 }
 
 onDelete(id: number) {
-  this.customerservice.deleteCustomer(id).subscribe( x => {
+  this.customerservice.deleteCustomer(Number(id)).subscribe( x => {
     this.getCustomer();
   })
 }
@@ -40,5 +40,9 @@ onDelete(id: number) {
 onEdit(customer: userClass) {
   this.router.navigate(['customers/edit',customer.id])
   
+}
+
+onDetails(customer: userClass){
+  this.router.navigate(['customers/details',customer.id])
 }
 }
