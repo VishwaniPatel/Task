@@ -31,7 +31,7 @@ export class CustomerListComponent implements OnInit {
     })
 }
 
-onDelete(id: number) {
+onDelete(id: any) {
   this.customerservice.deleteCustomer(Number(id)).subscribe( x => {
     this.getCustomer();
   })
