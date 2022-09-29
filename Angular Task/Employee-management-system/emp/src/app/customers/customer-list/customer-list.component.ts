@@ -40,6 +40,7 @@ onDelete(id: any) {
 onEdit(customer: userClass) {
   this.router.navigate(['customers/edit',customer.id])
   
+  
 }
 
 onDetails(customer: userClass){

@@ -21,6 +21,7 @@ const routes: Routes = [
     component: ContactComponent
   },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'rxjs', loadChildren: () => import('./rx-js/rx-js.module').then(m => m.RxJSModule) },
   {
     path:"**",
     component: PageNotFoundComponent

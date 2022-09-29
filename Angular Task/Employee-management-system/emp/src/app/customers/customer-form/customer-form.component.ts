@@ -1,6 +1,7 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { userClass } from '../user.model';
 
@@ -21,24 +22,29 @@ export class CustomerFormComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private customerservice: CustomerService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public router: Router
   ) {
     this.customerform = new FormGroup('');
     this.customerform = this.formbuilder.group({});
-    this.title = "Add";
+    this.title = "";
     this.customerData = [];
+    // this.id='';
 
    this.route.params.subscribe(params=>{
     this.id = params['id']
     console.log(this.id);
-    this.getCustomerById();
-   })
+    if(this.id){
+      
+      this.getCustomerById();
+    }
+  })
    console.log(route);
    
   }
 
   ngOnInit(): void {
-
+    this.title = this.id ? "Edit" : "Add";
     this.getCustomer();
     this.customerform = this.formbuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -56,14 +62,17 @@ export class CustomerFormComponent implements OnInit {
       if (this.id) {
         this.editCustomer();
         console.log("Edit works");
-
+        this.router.navigateByUrl('customers/add');
+        this.customerform.reset();
+        this.title = "Edit";
       }
       else {
         this.customerservice.addCustomer(this.customerform.value).subscribe((Response) => {
 
           this.getCustomer();
         });
-        this.customerform.reset()
+        this.customerform.reset();
+
       }
 
 
@@ -84,7 +93,7 @@ export class CustomerFormComponent implements OnInit {
   }
 
   private editCustomer(): void {
-    this.customerservice.editCustomer(this.customerform.value, this.id).subscribe(Response => {
+    this.customerservice.editCustomer(Number(this.id), this.customerform.value).subscribe(Response => {
       this.getCustomer();
     })
   }
