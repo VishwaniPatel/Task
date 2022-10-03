@@ -116,9 +116,13 @@ const subscribe = example.subscribe(val => console.log(`Even number: ${val}`));
 // result1.subscribe(x => console.log(x));
 //   }
 
-  const clicks2 = fromEvent(document, 'click');
-  const result2 = clicks2.pipe(debounceTime(2000));
-  result2.subscribe(x => console.log(x));
+  const searchbox = document.getElementById("search")!;
+  const keyup = fromEvent(searchbox, 'keyup');
+  keyup.pipe(  
+    map((i: any) => i.currentTarget.value),  
+    debounceTime(1000)  
+  )  
+  .subscribe(console.log);
 
   const switched = of(1, 2, 3).pipe(switchMap(x => of(x, x ** 2, x ** 3)));
   switched.subscribe(x => console.log(x));
