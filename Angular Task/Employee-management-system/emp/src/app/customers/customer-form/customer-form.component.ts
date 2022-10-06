@@ -31,16 +31,16 @@ export class CustomerFormComponent implements OnInit {
     this.customerData = [];
     // this.id='';
 
-   this.route.params.subscribe(params=>{
-    this.id = params['id']
-    console.log(this.id);
-    if(this.id){
-      
-      this.getCustomerById();
-    }
-  })
-   console.log(route);
-   
+    this.route.params.subscribe(params => {
+      this.id = params['id']
+      console.log(this.id);
+      if (this.id) {
+
+        this.getCustomerById();
+      }
+    })
+    console.log(route);
+
   }
 
   ngOnInit(): void {
@@ -79,13 +79,13 @@ export class CustomerFormComponent implements OnInit {
     }
   }
 
-  private getCustomer() : void{
+  private getCustomer(): void {
     this.customerservice.getCustomer().subscribe((customer: userClass[]) => {
       this.customerData = customer;
     })
   }
 
-  private getCustomerById() : void{
+  private getCustomerById(): void {
     this.customerservice.getCustomerById(Number(this.id)).subscribe(customer => {
       this.customerform.patchValue(customer)
 
