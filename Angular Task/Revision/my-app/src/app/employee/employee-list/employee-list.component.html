@@ -14,7 +14,9 @@
             <td>{{employee.dob}}</td>
             <td>{{employee.salary}}</td>
             <td>
-                <button>Edit</button>
+                <a [routerLink]="['./edit', employee.id]">Edit</a>
+                <button (click)="onEdit(employee.id)">Edit</button>
+                <button (click)="onDelete(employee.id)">Delete</button>
             </td>
         </tr>
     </tbody>

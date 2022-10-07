@@ -1,11 +1,11 @@
 {
-    "employeeData": [
-        {
-            "id": 1,
-            "name": "Vishwani",
-            "gender": "Female",
-            "dob": "04/01/2022",
-            "salary": "10000"
-        }
-    ]
+  "employeeData": [
+    {
+      "id": 1,
+      "name": "vini patel",
+      "gender": "female",
+      "dob": "2022-10-08",
+      "salary": "123456"
+    }
+  ]
 }

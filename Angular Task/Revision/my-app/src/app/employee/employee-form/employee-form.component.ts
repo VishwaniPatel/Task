@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
 
@@ -13,29 +14,102 @@ export class EmployeeFormComponent implements OnInit {
   public isSubmitted: boolean = false;
   public title: string;
   public employeeList: employee[];
-  public id:any;
+  public id: any;
+
   constructor(
-    private formbuilder:FormBuilder,
+    private formbuilder: FormBuilder,
     private employeeService: EmployeeService,
+    public activatedRoute: ActivatedRoute,
+    public route: Router
 
   ) {
+    // this.id = '';
     this.employeeform = new FormGroup('');
     this.employeeform = this.formbuilder.group({});
     this.title = "";
     this.employeeList = [];
-   }
+
+    console.log(this.activatedRoute);
+
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['empid'];
+      console.log("Hello");
+      
+      // if (this.id) {
+      this.getEmpById();
+      // }
+    })
+  }
 
   ngOnInit(): void {
+    this.getEmployee();
     this.title = this.id ? "Edit" : "Add";
     this.employeeform = this.formbuilder.group({
-      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]$*'),Validators.minLength(3)]],
-      gender: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]$*')]],
+      id: [],
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(3)]],
+      gender: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
       dob: ['', Validators.required],
-      salary: ['', [Validators.required, Validators.pattern('^[0-9]$*')]]
+      salary: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     });
+    // this.activatedRouter.firstChild?.params.subscribe((params => {
+
+    //   console.log(params);
+    //   console.log('Active-Param', this.activatedRouter.snapshot.children);
+    //   this.id = params['custid'];
+    //   console.log(this.id);
+    //   // if (this.id) {
+    //   this.getEmpById();
+    //   // }
+    // }))
+
+    // this.activatedRouter.params.subscribe((params) => {
+ 
+    //   console.log('Active-Param', this.activatedRouter.snapshot.children);
+
+
+    //   this.id = params['custid'];
+    //   console.log(this.id);
+    //   // if (this.id) {
+    //   this.getEmpById();
+    //   // }
+    // })
   }
 
   onSubmit() {
     this.isSubmitted = true;
+    if (this.employeeform.valid) {
+      this.isSubmitted = false;
+      if (this.id) {
+        this.editEmployee();
+        this.employeeform.reset();
+        this.route.navigateByUrl('employee/add');
+      }
+      else {
+        this.employeeService.addEmployee(this.employeeform.value).subscribe((Response) => {
+          this.getEmployee();
+          // this.isSubmitted = false;
+          this.employeeform.reset();
+        })
+      }
+    }
+  }
+
+
+  private getEmployee(): void {
+    this.employeeService.getEmployee().subscribe((employee) => {
+      this.employeeList = employee;
+    })
+  }
+
+  private getEmpById() {
+    this.employeeService.getEmployeeById(Number(this.id)).subscribe((employee) => {
+      this.employeeform.patchValue(employee);
+    })
+  }
+
+  private editEmployee(): void {
+    this.employeeService.editEmployee(this.employeeform.value, Number(this.id)).subscribe((employee) => {
+      this.getEmployee();
+    })
   }
 }

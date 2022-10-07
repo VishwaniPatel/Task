@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
 
@@ -8,21 +9,33 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-@Input() public employeeData : employee[]; 
+  @Input() public employeeData: employee[];
+
   constructor(
-    private employeeService : EmployeeService
+    public router: Router,
+    private activatedRoute: ActivatedRoute,
+    private employeeService: EmployeeService
   ) {
     this.employeeData = [];
-   }
+
+  }
 
   ngOnInit(): void {
 
-    this.getEmployee();
+
+  }
+  private getEmployee(): void {
+    this.employeeService.getEmployee().subscribe((employee: employee[]) => {
+      this.employeeData = employee;
+    })
   }
 
-  getEmployee(){
-    this.employeeService.getEmployee().subscribe((employee:employee[]) => {
-      this.employeeData = employee;
-    })   
+  onDelete(id: any): void {
+    this.employeeService.deleteEmployee(Number(id)).subscribe(employee => {
+      this.getEmployee();
+    })
+  }
+  onEdit(id: any): void {
+    this.router.navigate(['employee/edit', id])
   }
 }
