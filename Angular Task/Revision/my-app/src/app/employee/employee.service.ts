@@ -14,9 +14,9 @@ export class EmployeeService {
     this.baseUrl = "http://localhost:3000/employeeData/"
   }
 
-  getEmployee(): Observable<any> {
+  getEmployee(): Observable<employee[]> {
     // const url: string = this.baseUrl;
-    return this.http.get(this.baseUrl);
+    return this.http.get<employee[]>(this.baseUrl);
   }
 
   addEmployee(employee: employee): Observable<any> {
@@ -25,6 +25,7 @@ export class EmployeeService {
   }
 
   getEmployeeById(id: number): Observable<any> {
+    debugger
     // const url: string = this.baseUrl + 'employeeData/' + id;
     return this.http.get(this.baseUrl+id);
   }
@@ -36,6 +37,6 @@ export class EmployeeService {
 
   editEmployee(employee: employee, id: number): Observable<any> {
     // const url: string = this.baseUrl + 'employeeData/' + id;
-    return this.http.put(this.baseUrl, employee);
+    return this.http.put(this.baseUrl + id, employee);
   }
 }

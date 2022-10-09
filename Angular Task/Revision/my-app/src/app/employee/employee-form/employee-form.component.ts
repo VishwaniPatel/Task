@@ -31,14 +31,16 @@ export class EmployeeFormComponent implements OnInit {
 
     console.log(this.activatedRoute);
 
-    this.activatedRoute.params.subscribe((params) => {
-      this.id = params['empid'];
-      console.log("Hello");
-      
-      // if (this.id) {
-      this.getEmpById();
-      // }
-    })
+    this.activatedRoute.params.subscribe((params:any) => {
+      debugger  
+      if (typeof params.empid != undefined ) {
+        this.id = params['empid'];
+        console.log("Hello");
+        if (this.id) {
+        this.getEmpById();
+        }
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -102,12 +104,14 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   private getEmpById() {
+    debugger
     this.employeeService.getEmployeeById(Number(this.id)).subscribe((employee) => {
       this.employeeform.patchValue(employee);
     })
   }
 
   private editEmployee(): void {
+    debugger
     this.employeeService.editEmployee(this.employeeform.value, Number(this.id)).subscribe((employee) => {
       this.getEmployee();
     })

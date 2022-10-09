@@ -6,6 +6,13 @@
       "gender": "female",
       "dob": "2022-10-08",
       "salary": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Vishwani",
+      "gender": "Female",
+      "dob": "2022-10-12",
+      "salary": "123456"
     }
   ]
 }

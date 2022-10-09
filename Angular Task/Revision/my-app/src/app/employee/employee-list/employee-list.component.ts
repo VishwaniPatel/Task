@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
@@ -9,6 +9,8 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
+
+  @Output() employeeToEdit: EventEmitter<number> = new EventEmitter<number>();
   @Input() public employeeData: employee[];
 
   constructor(
@@ -30,12 +32,14 @@ export class EmployeeListComponent implements OnInit {
     })
   }
 
-  onDelete(id: any): void {
+  onDelete(id: number): void {
     this.employeeService.deleteEmployee(Number(id)).subscribe(employee => {
       this.getEmployee();
     })
   }
-  onEdit(id: any): void {
-    this.router.navigate(['employee/edit', id])
+  onEdit(employee: employee): void {
+    debugger
+    // this.employeeToEdit.emit(employee.id)
+    this.router.navigate(['employee/edit', employee.id])
   }
 }
