@@ -38,7 +38,6 @@ export class EmployeeListComponent implements OnInit {
     })
   }
   onEdit(employee: employee): void {
-    debugger
     // this.employeeToEdit.emit(employee.id)
     this.router.navigate(['employee/edit', employee.id])
   }

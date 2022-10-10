@@ -31,20 +31,20 @@ export class EmployeeFormComponent implements OnInit {
 
     console.log(this.activatedRoute);
 
-    this.activatedRoute.params.subscribe((params:any) => {
-      debugger  
-      if (typeof params.empid != undefined ) {
-        this.id = params['empid'];
-        console.log("Hello");
-        if (this.id) {
-        this.getEmpById();
-        }
-      }
-    });
+    // this.activatedRoute.params.subscribe((params:any) => {
+ 
+    //   if (typeof params.empid != undefined ) {
+    //     this.id = params['empid'];
+    //     console.log("Hello");
+    //     if (this.id) {
+   
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit(): void {
-    this.getEmployee();
+    // this.getEmployee();
     this.title = this.id ? "Edit" : "Add";
     this.employeeform = this.formbuilder.group({
       id: [],
@@ -79,41 +79,9 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit() {
     this.isSubmitted = true;
-    if (this.employeeform.valid) {
-      this.isSubmitted = false;
-      if (this.id) {
-        this.editEmployee();
-        this.employeeform.reset();
-        this.route.navigateByUrl('employee/add');
-      }
-      else {
-        this.employeeService.addEmployee(this.employeeform.value).subscribe((Response) => {
-          this.getEmployee();
-          // this.isSubmitted = false;
-          this.employeeform.reset();
-        })
-      }
-    }
+   
   }
 
 
-  private getEmployee(): void {
-    this.employeeService.getEmployee().subscribe((employee) => {
-      this.employeeList = employee;
-    })
-  }
-
-  private getEmpById() {
-    debugger
-    this.employeeService.getEmployeeById(Number(this.id)).subscribe((employee) => {
-      this.employeeform.patchValue(employee);
-    })
-  }
-
-  private editEmployee(): void {
-    debugger
-    this.employeeService.editEmployee(this.employeeform.value, Number(this.id)).subscribe((employee) => {
-      this.getEmployee();
-    })
-  }
+  
 }

@@ -1,0 +1,2 @@
+<app-user-form (userFormDetails)="editUser($event)"  [updateUSER]="updatedUser"></app-user-form>
+<app-user-list [userList]="dbuserList" (userId)="deleteUser($event)" (editUser)="editUserDetails($event)"></app-user-list>
