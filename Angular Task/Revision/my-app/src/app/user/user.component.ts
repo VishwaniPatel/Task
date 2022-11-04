@@ -28,7 +28,6 @@ export class UserComponent implements OnInit {
   addNewUser(user:User){
     this.userServcie.addUser(user).subscribe((Response) => {
       this.getAllUsers();
-
     })
   }
 

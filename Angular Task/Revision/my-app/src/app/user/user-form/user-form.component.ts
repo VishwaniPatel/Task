@@ -10,14 +10,16 @@ import { User } from '../user.model';
 export class UserFormComponent implements OnInit {
   @Input() public set updatedUser(value: User) {
     if (value) {
-      this.updatedUser = value;
-      this.userform.patchValue(value);
+      this.updateUser = value;
+      this.patchFormValues(value);
+      // this.userform.patchValue(this.updatedUser);
     }
   }
   @Output() userFormDetails: EventEmitter<User> = new EventEmitter<User>();
   public userform: FormGroup;
   public isSubmitted: boolean = false;
   public title: string;
+  private updateUser = User;
 
   constructor(private formbuilder: FormBuilder) { 
     this.userform = new FormGroup('');
@@ -25,8 +27,7 @@ export class UserFormComponent implements OnInit {
     this.title = "Add";
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
     this.userform = this.formbuilder.group({
       id: [],
       name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(3)]],
@@ -35,6 +36,10 @@ export class UserFormComponent implements OnInit {
       salary: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     });
   }
+  patchFormValues(values: User) {
+    this.userform.patchValue(values);
+  }
+
  
   submitUserData(){
     this.isSubmitted = true;

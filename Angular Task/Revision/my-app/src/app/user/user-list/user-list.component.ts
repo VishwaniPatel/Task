@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import { UserRoutingModule } from '../user-routing.module';
+import { Router } from '@angular/router';
 import { User } from '../user.model';
 
 
@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   @Input() userList: User[];
   @Output() userId: EventEmitter<number> = new EventEmitter<number>();
   @Output() editUser: EventEmitter<User> = new EventEmitter<User>();
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -23,5 +23,6 @@ export class UserListComponent implements OnInit {
 
   onEdit(user:User){
     this.editUser.emit(user);
+    this.router.navigate(['user','edit',user.id])
   }
 }
