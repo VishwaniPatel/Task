@@ -1,33 +1,13 @@
-<!-- <div class="d-flex flex-grow-1 dropzone align-items-center justify-content-center">
-    <div class="d-flex justify-content-center align-items-center">Drop your file here!
-        <input type="file" (change)="onSelect($event)" multiple>
-    </div>
-</div>
-droped image preview-->
-<!-- <div> -->
-    <!-- <img *ngIf="let img from images" [src]="file.url" width="100px" height="100px"> -->
-<!-- </div>  -->
 
-<div class="center">
-    <ngx-file-drop class="drop" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
-    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-            Drop your file here!
-          <button type="button" (click)="openFileSelector()">Browse Files</button>
-        </ng-template>
-    </ngx-file-drop>
-    <div class="upload-table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody class="upload-name-style">
-                <tr *ngFor="let item of files; let i=index">
-                    <td><strong>{{ item.relativePath }}</strong></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+    <ngx-dropzone-label>Drag and Drop Here!
+       <div><span class="bi bi-cloud-arrow-up-fill"></span></div> 
+    </ngx-dropzone-label>
+
+<!-- </ngx-dropzone> -->
+</div>
+<div ngx-dropzone style="border: 0px !important;">
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
+        (removed)="onRemove(f)">
+    </ngx-dropzone-image-preview>
 </div>

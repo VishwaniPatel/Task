@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxFileDropEntry } from 'ngx-file-drop';
+import { NotificationService } from './notification.service';
 
 @Component({
   selector: 'app-image-upload',
@@ -7,45 +7,38 @@ import { NgxFileDropEntry } from 'ngx-file-drop';
   styleUrls: ['./image-upload.component.scss']
 })
 export class ImageUploadComponent implements OnInit {
-  
-  constructor() { }
+
+  files: File[] = [];
+  public total_images: number = 0;
+  constructor(private notifyService: NotificationService) { }
 
   ngOnInit(): void {
   }
 
-  public files: NgxFileDropEntry[] = [];
+  onSelect(event: any) {
+    this.total_images += event.addedFiles.length;
+    if (this.files.length > 5 || this.total_images > 5) {
+      this.notifyService.showError("You Can Only Select Upto 5 Images !");
+      this.total_images = this.files.length;
+    }
+    else {
 
-  public dropped(files: NgxFileDropEntry[]) {
-    this.files = files;
-      if (files.length > 6) {
-        alert("Cannot add more than 6 Files at a time.")
+      this.files.push(...event.addedFiles);
+      const formData = new FormData();
+
+      for (var i = 0; i < this.files.length; i++) {
+        formData.append("file[]", this.files[i]);
       }
-      else {
-    for (const droppedFile of files) {
-
-      // Is it a file?
-      if (droppedFile.fileEntry.isFile) {
-        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
-        fileEntry.file((file: File) => {
-          
-          // Here you can access the real file
-          console.log(droppedFile.relativePath, file);
-
-        });
-      } else {
-        // It was a directory (empty directories are added, otherwise only files)
-        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
-      }
+      this.notifyService.showSuccess("Image Uploaded Successfully");
     }
   }
-  }
-  public fileOver(event:any){
+  onRemove(event: any) {
     console.log(event);
-  }
+    this.files.splice(this.files.indexOf(event), 1);
+    this.total_images = this.total_images - 1;
+    console.log(this.total_images);
 
-  public fileLeave(event:any){
-    console.log(event);
-  }
+   
 
+  }
 }
