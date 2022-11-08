@@ -1,4 +1,3 @@
-
 <h2 class="text-center">Customer List</h2>
 <br />
 <table class="table">
@@ -18,16 +17,13 @@
       <td>{{ customer.dob | date: "mediumDate" }}</td>
       <td>{{ customer.salary | currency:'INR' }}</td>
       <td>
-        <button
-         (click)="onDelete(customer.id)"
-        >
+        <button (click)="onDelete(customer.id)">
           Delete
         </button>
-        <button  (click)="onEdit(customer)">
-          Edit 
+        <button (click)="onEdit(customer)">
+          Edit
         </button>
-        <button (click)="onDetails(customer)"
-        >
+        <button (click)="onDetails(customer)">
           Details
         </button>
       </td>

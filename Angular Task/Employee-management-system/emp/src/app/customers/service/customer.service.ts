@@ -13,8 +13,8 @@ export class CustomerService {
     this.basUrl = "http://localhost:3000/";
   }
 
-  getCustomer(): Observable<any> {
-    const url: string = this.basUrl + 'userList'
+  getCustomer(page:any): Observable<any> {
+    const url: string = this.basUrl + 'userList' + '?_page='+page.pageNumber+'&_limit='+page.pageSize;
     return this.http.get(url);
   }
 

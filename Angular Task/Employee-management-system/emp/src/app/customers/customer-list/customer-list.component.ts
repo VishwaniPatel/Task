@@ -1,7 +1,8 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
-import { userClass } from '../user.model';
+import { Pagination, userClass } from '../user.model';
 
 @Component({
   selector: 'app-customer-list',
@@ -11,12 +12,17 @@ import { userClass } from '../user.model';
 export class CustomerListComponent implements OnInit {
 
   @Input() public userList: userClass[];
+  public tableProperty: Pagination;
+  distance = 2;
+  throttle = 0;
 
   constructor(
     private customerservice : CustomerService,
     private router: Router
   ) {
-
+    this.tableProperty = new Pagination();
+    this.tableProperty.pageNumber = 1;
+    this.tableProperty.pageSize = 20;
     this.userList = [];
    }
 
@@ -24,8 +30,9 @@ export class CustomerListComponent implements OnInit {
 
   }
   private getCustomer(): void {
-    this.customerservice.getCustomer().subscribe((customer: userClass[]) => {
-      this.userList = customer;
+    this.customerservice.getCustomer(this.tableProperty).subscribe((customer: userClass[]) => {
+      // this.userList = customer;
+      this.userList = this.userList.concat(customer)
       console.log(this.userList);
       
     })
@@ -46,4 +53,12 @@ onEdit(customer: userClass) {
 onDetails(customer: userClass){
   this.router.navigate(['customers/details',customer.id])
 }
+
+// onScroll() {
+//   this.tableProperty.pageNumber++;
+//   this.customerservice.getCustomer(this.tableProperty).subscribe(()=>{
+
+//   })
+
+// }
 }

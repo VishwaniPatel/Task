@@ -11,6 +11,7 @@ export class EmployeeListComponent implements OnInit {
   @Input() userlist: any;
   @Output() displaydata: EventEmitter<any>;
   @Output() empdetails: EventEmitter<any>;
+  
 
   public editdata:any;
   constructor(

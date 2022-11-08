@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { userClass } from './user.model';
 import { CustomerService } from './service/customer.service';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     CommonModule,
     CustomersRoutingModule,
     ReactiveFormsModule,
-    
+    InfiniteScrollModule
   ],
   providers:[
     CustomerService

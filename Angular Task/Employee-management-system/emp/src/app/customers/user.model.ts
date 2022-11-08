@@ -7,3 +7,7 @@ export class userClass {
         public salary?:number) {}
     
 } 
+export class Pagination{
+    public pageSize!:number;
+    public pageNumber!:number;
+}

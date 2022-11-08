@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
-import { userClass } from '../user.model';
+import { Pagination, userClass } from '../user.model';
 
 
 @Component({
@@ -18,6 +18,9 @@ export class CustomerFormComponent implements OnInit {
   public title: string;
   public customerData: userClass[];
   public id: any;
+  public tableProperty: Pagination;
+  distance = 1;
+  throttle = 5000;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -29,6 +32,10 @@ export class CustomerFormComponent implements OnInit {
     this.customerform = this.formbuilder.group({});
     this.title = "";
     this.customerData = [];
+
+    this.tableProperty = new Pagination();
+    this.tableProperty.pageNumber = 1;
+    this.tableProperty.pageSize = 12;
     // this.id='';
 
     this.route.params.subscribe(params => {
@@ -80,8 +87,9 @@ export class CustomerFormComponent implements OnInit {
   }
 
   private getCustomer(): void {
-    this.customerservice.getCustomer().subscribe((customer: userClass[]) => {
-      this.customerData = customer;
+    this.customerservice.getCustomer(this.tableProperty).subscribe((customer: userClass[]) => {
+      this.customerData = this.customerData.concat(customer)
+      // this.customerData = customer;
     })
   }
 
@@ -96,5 +104,10 @@ export class CustomerFormComponent implements OnInit {
     this.customerservice.editCustomer(Number(this.id), this.customerform.value).subscribe(Response => {
       this.getCustomer();
     })
+  }
+  onScroll() {
+    this.tableProperty.pageNumber++;
+    this.getCustomer();
+  
   }
 }

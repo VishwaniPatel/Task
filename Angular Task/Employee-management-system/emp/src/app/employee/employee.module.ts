@@ -8,6 +8,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeListComponent } from './employee-form/employee-list/employee-list.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EmployeeListComponent } from './employee-form/employee-list/employee-li
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule
   ]
 })
 export class EmployeeModule { }
