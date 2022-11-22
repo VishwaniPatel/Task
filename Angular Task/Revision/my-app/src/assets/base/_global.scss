@@ -1,0 +1,16 @@
+// Global styles goes here
+html,
+body {
+    height  : 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.overflow-vertical {
+    overflow-x: hidden;
+    overflow-y: auto;
+}

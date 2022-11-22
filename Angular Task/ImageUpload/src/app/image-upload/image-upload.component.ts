@@ -17,15 +17,22 @@ export class ImageUploadComponent implements OnInit {
 
   onSelect(event: any) {
     this.total_images += event.addedFiles.length;
-    if (this.files.length > 5 || this.total_images > 5) {
+    // 
+    if ( this.files.length > 5 || this.total_images > 5) {
       this.notifyService.showError("You Can Only Select Upto 5 Images !");
       this.total_images = this.files.length;
+      console.log("total" , this.total_images);
+      console.log(this.files.length);
+      
     }
     else {
 
       this.files.push(...event.addedFiles);
       const formData = new FormData();
-
+      console.log("tot", this.total_images);
+      console.log(this.files.length);
+      
+      
       for (var i = 0; i < this.files.length; i++) {
         formData.append("file[]", this.files[i]);
       }

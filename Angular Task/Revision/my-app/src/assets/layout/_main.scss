@@ -1,0 +1,18 @@
+.main-wrapper{
+    padding: 30px;
+    font-size: 16px;
+    color: $secondary;
+    z-index: 3;
+    
+    .wrapper{
+        background-color: $white;
+        box-shadow: 2px 2px 10px $box-shadow;      
+    }
+
+    .icon{
+        color: #e9eaec;
+        font-size: 30px;
+    }
+
+    
+}

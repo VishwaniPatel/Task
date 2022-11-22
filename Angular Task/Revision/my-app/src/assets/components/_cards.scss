@@ -1,0 +1,16 @@
+
+.card{
+    border: none;
+    .left-card{
+        height: 400px;
+    }
+    .right-card{
+        height: 400px;
+    }
+    &-header{
+        z-index: 2;
+        border-bottom: none;
+        background-color: $white;
+        box-shadow: 2px 2px 10px $box-shadow;
+    }
+}

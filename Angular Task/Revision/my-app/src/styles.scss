@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+// Base Files
+@import 'assets/base/index';
+
+// Vendor Files
+@import 'assets/vendor/';
+@import 'assets/vendor/bootstrap_components';
+
+
+// Component Files
+@import 'assets/components/index';
+
+// Layout Files
+@import 'assets/layout/index';
+
+// Utilities Files
+@import 'assets/utilities/index';

@@ -10,7 +10,7 @@ import { User } from '../user.model';
 export class UserFormComponent implements OnInit {
   @Input() public set updatedUser(value: User) {
     if (value) {
-      this.updateUser = value;
+      // this.updateUser = value;
       this.patchFormValues(value);
       // this.userform.patchValue(this.updatedUser);
     }
