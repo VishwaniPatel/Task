@@ -25,7 +25,8 @@ import { OperatorsComponent } from './operators/operators.component';
     AppRoutingModule,
     CoreModule,
     ShareModule,
-    HttpClientModule
+    HttpClientModule,
+    
 
   ],
   providers: [CustomerService],
